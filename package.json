@@ -1,11 +1,11 @@
 {
-  "name": "parcel-project-template",
+  "name": "hw-09",
   "version": "2.0.0",
   "description": "",
-  "homepage": "https://goitacademy.github.io/parcel-project-template",
+  "homepage": "https://marksavkait.github.io/hw-10/",
   "scripts": {
     "start": "parcel src/*.html",
-    "build": "parcel build src/*.html --public-url /parcel-project-template/"
+    "build": "parcel build src/*.html --public-url /hw-09/"
   },
   "repository": {
     "type": "git",
