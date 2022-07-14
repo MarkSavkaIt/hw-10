@@ -1,11 +1,11 @@
 {
-  "name": "hw-09",
+  "name": "hw-10",
   "version": "2.0.0",
   "description": "",
   "homepage": "https://marksavkait.github.io/hw-10/",
   "scripts": {
     "start": "parcel src/*.html",
-    "build": "parcel build src/*.html --public-url /hw-09/"
+    "build": "parcel build src/*.html --public-url /hw-10/"
   },
   "repository": {
     "type": "git",
