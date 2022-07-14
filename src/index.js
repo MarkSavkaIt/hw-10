@@ -19,7 +19,7 @@ function checkData(data) {
     Notiflix.Notify.info(
       'Too many matches found. Please enter a more specific name.'
     );
-    countryList.innerHTML = '';
+    clearHtml();
   } else if (data.length === 1) {
     renderCountry(data[0]);
   } else renderCountries(data);
