@@ -21,12 +21,22 @@ function checkData(data) {
     );
     countryList.innerHTML = '';
   } else if (data.length === 1) {
-    renderCountry(data);
+    renderCountry(data[0]);
   } else renderCountries(data);
 }
 
 function renderCountry(data) {
-  let html = '';
+  console.log('data from render on country', data);
+  let html = `<div>
+    <img src="${data.flags.svg}" width="30px" />
+    <p>Capital : ${data.capital}</p>
+    <p>Population : ${data.population}</p>
+    <p>Languages : ${Object.values(data.languages).join(', ')}</p>
+    
+    
+  </div>`;
+  clearHtml();
+  countryInfo.innerHTML = html;
 }
 
 function renderCountries(data) {
@@ -36,6 +46,7 @@ function renderCountries(data) {
         `<li> <img src="${item.flags.svg}" width="30px" /> <p>${item.name.common}</p></li>`
     )
     .join('');
+  clearHtml();
   countryList.innerHTML = html;
 }
 
@@ -48,10 +59,13 @@ input.addEventListener(
       .then(res => res.data)
       .then(data => checkData(data))
       .catch(err => {
-        Notiflix.Notify.failure(err.message);
-        countryList.innerHTML = '';
+        Notiflix.Notify.failure('Oops, there is no country with that name');
+        clearHtml();
       });
-
-    // .catch(err => Notiflix.Notify.failure('Country not found!!!'));
   }, DEBOUNCE_DELAY)
 );
+
+function clearHtml() {
+  countryInfo.innerHTML = '';
+  countryList.innerHTML = '';
+}
